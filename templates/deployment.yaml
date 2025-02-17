@@ -11,7 +11,6 @@ spec:
   selector:
     matchLabels:
       {{- include "test.selectorLabels" . | nindent 6 }}
-      - another
   template:
     metadata:
       {{- with .Values.podAnnotations }}
@@ -23,6 +22,8 @@ spec:
         {{- with .Values.podLabels }}
         {{- toYaml . | nindent 8 }}
         {{- end }}
+      aNewField:
+        test: waheed
     spec:
       {{- with .Values.imagePullSecrets }}
       imagePullSecrets:
