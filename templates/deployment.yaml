@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: {{ include "test.fullname" . }}
+  name: {{ include "test.fullname" . }} dusadkaljkaljfklanfkldsnfklsdnflksdnfkndkfnsdkflndsknfskdnfksdnfsknf
   labels:
     {{- include "test.labels" . | nindent 4 }}
 spec:
@@ -11,6 +11,7 @@ spec:
   selector:
     matchLabels:
       {{- include "test.selectorLabels" . | nindent 6 }}
+      - another
   template:
     metadata:
       {{- with .Values.podAnnotations }}
